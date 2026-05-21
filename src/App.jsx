@@ -11,12 +11,14 @@ export default function App() {
   const [records, setRecords] = useState([]);
   const [filter, setFilter] = useState("");
 
-  const [form, setForm] = useState({
-    investigador: "",
-    proyecto: "",
-    fecha: "",
-    horas: ""
-  });
+  
+const [form, setForm] = useState({
+  investigador: "",
+  proyecto: "",
+  working_package: "",
+  fecha: "",
+  horas: ""
+});
 
   // LOGIN
   const login = async (email, password) => {
@@ -156,6 +158,12 @@ export default function App() {
         placeholder="Proyecto"
         value={form.proyecto}
         onChange={(e) => setForm({ ...form, proyecto: e.target.value })}
+      />
+
+      <input
+        placeholder="Working Package (WP)"
+        value={form.working_package}
+        onChange={(e) => setForm({ ...form, working_package: e.target.value })}
       />
 
       <input
